@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Réseau
+{% endblock %}
+
+{% block section %}
+<h1>Organisation du réseau<h1>
+{% endblock %}
+
+{% block article %}
+    <h2>Segmentation</h2><h3>L'organisation des VLAN et de l'adressage IP est la suivante : </h3>
+    <img src="/img/tableau segmentation.png" alt="tableau segmentation img">
+    <h3>Les règles actuelles concernant les vlans sont les suivantes: <br/> 1)chaque vlan (sauf le vlan visiteur) peut uniquement accéder (quel que soit le protocole) aux vlans "Serveurs" et "Sortie"; <br/> 2)le vlan "Visiteurs" peut uniquement interroger les serveur DNS et DHCP et sortir sur internet;</h3>
+    
+{% endblock %}

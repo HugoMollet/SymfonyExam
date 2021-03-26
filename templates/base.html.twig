@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+                    <link rel="stylesheet" href="app.css">
+		{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div class="header">
+	    {% block header %}
+                <img src="/img/gsb logo fond bleu.png" alt="gsb logo fond bleu img">
+	    {% endblock %}
+        </div> 
+        
+        <div class="nav">
+		{% block nav %}
+                    <nav>
+                        <div class="dropdown">
+                          <button class="dropbtn">Le SI</button>
+                          <div class="dropdown-content">
+                          <a href={{path("SystemeInformatique")}}>Sytème informatique</a>
+                          <a href={{path("GestionInformatique")}}>Gestion informatique</a>
+                          <a href={{path("Equipement")}}>Equipement</a>
+                        </div>
+                        </div> 
+                         <div class="dropdown">
+                          <button class="dropbtn">Le Réseau</button>
+                          <div class="dropdown-content">
+                          <a href={{path("Repartition")}}>Repartition</a>
+                          <a href={{path("Segmentation")}}>Segmentation</a>
+                        </div>
+                        </div> 
+                         <div class="dropdown">
+                          <button class="dropbtn">Les Utilisateurs</button>
+                          <div class="dropdown-content">
+                          <a href={{path("Lesutilisateurs")}}>Tout les utilisateurs</a>
+                          <a href={{path("Lesutilisateurs")}}>test</a>
+                        </div>
+
+                    </nav> 
+	        {% endblock %}
+	</div> 
+        
+        <div class="section">
+		{% block section %}
+                    <nav> <h1>Description du laboratoire GSB</h1> </nav> 
+	        {% endblock %}
+	</div> 
+        
+         <div class="article">
+		{% block article %}
+
+                    <article>
+                       
+                        <h2>Le secteur d'activité</h2> <br/> <h3>L’industrie pharmaceutique est un secteur très lucratif dans lequel le mouvement de fusion acquisition est très fort. Les regroupements de laboratoires ces dernières années ont donné naissance à des entités gigantesques au sein desquelles le travail est longtemps resté organisé selon les anciennes structures. Des déboires divers récents autour de médicaments ou molécules ayant entraîné des complications médicales ont fait s'élever des voix contre une partie de l'activité des laboratoires : la visite médicale, réputée être le lieu d' arrangements entre l'industrie et les praticiens, et tout du moins un terrain d'influence opaque.</h3> <br/><h2>L'entreprise</h2><h3> Le laboratoire Galaxy Swiss Bourdin (GSB) est issu de la fusion entre le géant américain Galaxy (spécialisé dans le secteur des maladies virales dont le SIDA et les hépatites) et le conglomérat européen Swiss Bourdin (travaillant sur des médicaments plus conventionnels), lui même déjà union de trois petits laboratoires . En 2009, les deux géants pharmaceutiques ont uni leurs forces pour créer un leader de ce secteur industriel. L'entité Galaxy Swiss Bourdin Europe a établi son siège administratif à Paris. Le siège social de la multinationale est situé à Philadelphie, Pennsylvanie, aux Etats-Unis. La France a été choisie comme témoin pour l'amélioration du suivi de l'activité de visite.</h3><br><h2> Réorganisation</h2><h3> Une conséquence de cette fusion, est la recherche d'une optimisation de l’activité du groupe ainsi constitué en réalisant des économies d’échelle dans la production et la distribution des médicaments (en passant par une nécessaire restructuration et vague de licenciement), tout en prenant le meilleur des deux laboratoires sur les produits concurrents. L'entreprise compte 480 visiteurs médicaux en France métropolitaine (Corse comprise), et 60 dans les départements et territoires d'outre-mer. Les territoires sont répartis en 6 secteurs géographiques (Paris-Centre, Sud, Nord, Ouest, Est, DTOM Caraïbes-Amériques, DTOM Asie-Afrique). Une vision partielle de cette organisation est présentée ci-dessous.</h3>
+
+                    </article> 
+
+	        {% endblock %}
+	</div> 
+        <div class="footer">
+		{% block footer %}
+                    <footer> © - Hugo Mollet - 2020 </footer> 
+	        {% endblock %}
+	</div> 
+          
     </body>
 </html>
